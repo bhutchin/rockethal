@@ -1,7 +1,7 @@
 #! /bin/sh
 ARGS="brent.hutchin@@rockethal subject testing%%rockethal blah blah body blah"
-USERNAME=$($ARGS | sed s%\@\@.*%%g)
-SUBJECT=$(${ARGS} | sed s%.*\@\@%%g | sed s/\%\%.*//g)
+USERNAME=`echo ${!ARGS} | sed s%\@\@.*%%g`
+SUBJECT=`echo ${!ARGS} | sed s%.*\@\@%%g | sed s/\%\%.*//g`
 MESSAGE=$3
 #echo ""  >> /var/log/rockethal.log
 #echo "Email args:"  >> /var/log/rockethal.log
@@ -16,4 +16,4 @@ echo "Body:"    $BODY
 #TO='brent.hutchin@iloura.com.au'
 #echo $MESSAGE | $SEND $TO
 
-echo "Val all" $@ >> /tmp/rocket.log
+#echo "Val all" $@ >> /tmp/rocket.log
