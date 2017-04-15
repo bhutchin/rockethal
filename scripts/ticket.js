@@ -1,3 +1,5 @@
+//var res = str.replace("'", "\\'");
+
 var Conversation = require('hubot-conversation');
 module.exports = function (robot) {
   var newTicket = new Conversation(robot);
